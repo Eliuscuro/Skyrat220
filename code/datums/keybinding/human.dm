@@ -8,8 +8,8 @@
 /datum/keybinding/human/quick_equip
 	hotkey_keys = list("E")
 	name = "quick_equip"
-	full_name = "Quick equip"
-	description = "Quickly puts an item in the best slot available"
+	full_name = "Быстрая экипировка"
+	description = "Быстро запихивает предмет в лучший свободный слот, а так удобно одеваться..."
 	keybind_signal = COMSIG_KB_HUMAN_QUICKEQUIP_DOWN
 
 /datum/keybinding/human/quick_equip/down(client/user)
@@ -23,8 +23,8 @@
 /datum/keybinding/human/quick_equip_belt
 	hotkey_keys = list("ShiftE")
 	name = "quick_equip_belt"
-	full_name = "Quick equip belt"
-	description = "Put held thing in belt or take out most recent thing from belt"
+	full_name = "Быстро повесить на пояс"
+	description = "Запихивает удерживаемую вещь на пояс, если рука пустая, берёт последнюю вещь из ремня."
 	///which slot are we trying to quickdraw from/quicksheathe into?
 	var/slot_type = ITEM_SLOT_BELT
 	///what we should call slot_type in messages (including failure messages)
@@ -42,8 +42,8 @@
 /datum/keybinding/human/quick_equip_belt/quick_equip_bag
 	hotkey_keys = list("ShiftB")
 	name = "quick_equip_bag"
-	full_name = "Quick equip bag"
-	description = "Put held thing in backpack or take out most recent thing from backpack"
+	full_name = "Быстро сложить в сумку"
+	description = "Запихивает удерживаемую вещь в сумку, если рука пустая, берёт последнюю вещь из сумки."
 	slot_type = ITEM_SLOT_BACK
 	slot_item_name = "backpack"
 	keybind_signal = COMSIG_KB_HUMAN_BAGEQUIP_DOWN
@@ -51,8 +51,8 @@
 /datum/keybinding/human/quick_equip_belt/quick_equip_suit_storage
 	hotkey_keys = list("ShiftQ")
 	name = "quick_equip_suit_storage"
-	full_name = "Quick equip suit storage slot"
-	description = "Put held thing in suit storage slot item or take out most recent thing from suit storage slot item"
+	full_name = "Быстро надеть в слот скафандра"
+	description = "Запихивает удерживаемую вещь в слот скафандра, если рука пустая, берёт последнюю вещь из сумки."
 	slot_type = ITEM_SLOT_SUITSTORE
 	slot_item_name = "suit storage slot item"
 	keybind_signal = COMSIG_KB_HUMAN_SUITEQUIP_DOWN

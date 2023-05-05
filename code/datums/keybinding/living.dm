@@ -8,8 +8,8 @@
 /datum/keybinding/living/resist
 	hotkey_keys = list("B")
 	name = "resist"
-	full_name = "Resist"
-	description = "Break free of your current state. Handcuffed? on fire? Resist!"
+	full_name = "Сопротивляться"
+	description = "В наручниках? Горишь? Прикован к креслу? Не важно, одна кнопка на все случаи жизни."
 	keybind_signal = COMSIG_KB_LIVING_RESIST_DOWN
 
 /datum/keybinding/living/resist/down(client/user)
@@ -24,8 +24,8 @@
 	//hotkey_keys = list("L") //ORIGINAL
 	hotkey_keys = list("P") //SKYRAT EDIT CHANGE - CUSTOMIZATION
 	name = "look up"
-	full_name = "Look Up"
-	description = "Look up at the next z-level.  Only works if directly below open space."
+	full_name = "Посмотреть вверх"
+	description = "Посмотри вверх на следующий Z-уровень. Работает только если выше что-то есть."
 	keybind_signal = COMSIG_KB_LIVING_LOOKUP_DOWN
 
 /datum/keybinding/living/look_up/down(client/user)
@@ -44,8 +44,8 @@
 /datum/keybinding/living/look_down
 	hotkey_keys = list(";")
 	name = "look down"
-	full_name = "Look Down"
-	description = "Look down at the previous z-level.  Only works if directly above open space."
+	full_name = "Посмотреть вниз"
+	description = "Посмотри вниз на предыдущий Z-уровень. Работает только если ниже что-то есть."
 	keybind_signal = COMSIG_KB_LIVING_LOOKDOWN_DOWN
 
 /datum/keybinding/living/look_down/down(client/user)
@@ -64,8 +64,8 @@
 /datum/keybinding/living/rest
 	hotkey_keys = list("U")
 	name = "rest"
-	full_name = "Rest"
-	description = "Lay down, or get up."
+	full_name = "Лечь"
+	description = "Или встать."
 	keybind_signal = COMSIG_KB_LIVING_REST_DOWN
 
 /datum/keybinding/living/rest/down(client/user)
@@ -79,8 +79,8 @@
 /datum/keybinding/living/toggle_combat_mode
 	hotkey_keys = list("F")
 	name = "toggle_combat_mode"
-	full_name = "Toggle Combat Mode"
-	description = "Toggles combat mode. Like Help/Harm but cooler."
+	full_name = "Боевой режим (Переключить)"
+	description = "Переключает режим на боевой и обратно. Удобная штука."
 	keybind_signal = COMSIG_KB_LIVING_TOGGLE_COMBAT_DOWN
 
 
@@ -94,8 +94,8 @@
 /datum/keybinding/living/enable_combat_mode
 	hotkey_keys = list("4")
 	name = "enable_combat_mode"
-	full_name = "Enable Combat Mode"
-	description = "Enable combat mode."
+	full_name = "Боевой режим (Включить)"
+	description = "Включает боевой режим."
 	keybind_signal = COMSIG_KB_LIVING_ENABLE_COMBAT_DOWN
 
 /datum/keybinding/living/enable_combat_mode/down(client/user)
@@ -108,8 +108,8 @@
 /datum/keybinding/living/disable_combat_mode
 	hotkey_keys = list("1")
 	name = "disable_combat_mode"
-	full_name = "Disable Combat Mode"
-	description = "Disable combat mode."
+	full_name = "Боевой режим (Выключить)"
+	description = "Выключает боевой режим."
 	keybind_signal = COMSIG_KB_LIVING_DISABLE_COMBAT_DOWN
 
 /datum/keybinding/living/disable_combat_mode/down(client/user)

@@ -1,7 +1,7 @@
 //Please use mob or src (not usr) in these procs. This way they can be called in the same fashion as procs.
 /client/verb/wiki(query as text)
 	set name = "wiki"
-	set desc = "Type what you want to know about.  This will open the wiki in your web browser. Type nothing to go to the main page."
+	set desc = "Напиши что ты хочешь узнать.  Это откроет вики в твоём браузере. Оставь поле пустым дабы перейти на главную."
 	set hidden = TRUE
 	var/wikiurl = CONFIG_GET(string/wikiurl)
 	if(wikiurl)
@@ -11,61 +11,61 @@
 		else if (query != null)
 			src << link(wikiurl)
 	else
-		to_chat(src, span_danger("The wiki URL is not set in the server configuration."))
+		to_chat(src, span_danger("Ссылка на вики не указана в конфиге сервера."))
 	return
 
 /client/verb/forum()
 	set name = "forum"
-	set desc = "Visit the forum."
+	set desc = "Посетить форум."
 	set hidden = TRUE
 	var/forumurl = CONFIG_GET(string/forumurl)
 	if(forumurl)
-		if(tgui_alert(src, "This will open the forum in your browser. Are you sure?",, list("Yes","No"))!="Yes")
+		if(tgui_alert(src, "Это откроет форум в браузере. Ты уверен?",, list("Да","Нет"))!="Да")
 			return
 		src << link(forumurl)
 	else
-		to_chat(src, span_danger("The forum URL is not set in the server configuration."))
+		to_chat(src, span_danger("Ссылка на форум не указана в конфиге сервера."))
 	return
 
 /client/verb/rules()
 	set name = "rules"
-	set desc = "Show Server Rules."
+	set desc = "Показать правила сервера."
 	set hidden = TRUE
 	var/rulesurl = CONFIG_GET(string/rulesurl)
 	if(rulesurl)
-		if(tgui_alert(src, "This will open the rules in your browser. Are you sure?",, list("Yes","No"))!="Yes")
+		if(tgui_alert(src, "Это откроет страницу с правилами в браузере. Ты уверен?",, list("Да","Нет"))!="Да")
 			return
 		src << link(rulesurl)
 	else
-		to_chat(src, span_danger("The rules URL is not set in the server configuration."))
+		to_chat(src, span_danger("Ссылка на правила не указана в конфиге сервера."))
 	return
 
 /client/verb/github()
 	set name = "github"
-	set desc = "Visit Github"
+	set desc = "Посетить GitHub"
 	set hidden = TRUE
 	var/githuburl = CONFIG_GET(string/githuburl)
 	if(githuburl)
-		if(tgui_alert(src, "This will open the Github repository in your browser. Are you sure?",, list("Yes","No"))!="Yes")
+		if(tgui_alert(src, "Это откроет наш репозиторий на GitHub. Ты уверен?",, list("Да","Нет"))!="Да")
 			return
 		src << link(githuburl)
 	else
-		to_chat(src, span_danger("The Github URL is not set in the server configuration."))
+		to_chat(src, span_danger("Ссылка на GitHub не указана в конфиге сервера."))
 	return
 
 /client/verb/reportissue()
 	set name = "report-issue"
-	set desc = "Report an issue"
+	set desc = "Сообщить о баге"
 	set hidden = TRUE
 	var/githuburl = CONFIG_GET(string/githuburl)
 	if(githuburl)
-		var/message = "This will open the Github issue reporter in your browser. Are you sure?"
+		var/message = "Это откроет страницу на GitHub, где ты сможешь подробно описать свой баг. Ты уверен?"
 		if(GLOB.revdata.testmerge.len)
 			message += "<br>The following experimental changes are active and are probably the cause of any new or sudden issues you may experience. If possible, please try to find a specific thread for your issue instead of posting to the general issue tracker:<br>"
 			message += GLOB.revdata.GetTestMergeInfo(FALSE)
 		// We still use tgalert here because some people were concerned that if someone wanted to report that tgui wasn't working
 		// then the report issue button being tgui-based would be problematic.
-		if(tgalert(src, message, "Report Issue","Yes","No")!="Yes")
+		if(tgalert(src, message, "Сообщить о баге","Да","Нет")!="Да")
 			return
 
 		// Keep a static version of the template to avoid reading file
@@ -95,7 +95,7 @@
 		var/url_params = "Reporting client version: [byond_version].[byond_build]\n\n[local_template]"
 		DIRECT_OUTPUT(src, link("[githuburl]/issues/new?body=[url_encode(url_params)]"))
 	else
-		to_chat(src, span_danger("The Github URL is not set in the server configuration."))
+		to_chat(src, span_danger("Ссылка на GitHub не указана в конфиге сервера."))
 	return
 
 /client/verb/changelog()
